@@ -1,0 +1,248 @@
+@font-face {
+  font-family: CatCafe;
+  src: url(fonts/CatCafe.ttf);
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+::selection {
+  background-color: orangered;
+  color: #fff;
+}
+
+:root {
+  --accent-color: #3D0B0B;
+  --highlight-color:  #FDFAF4;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fAf4e8;
+  font-size: 1em;
+  line-height: 1.1;
+  color: var(--accent-color);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Search Bar */
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 15px 30px 0;
+  margin-bottom: 15px;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Landing Page */
+#homepage {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  margin: 0 0 15px;
+
+  h1 {
+    font-family: 'CatCafe', 'Franklin Gothic Medium', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(2.5em, 5.5vw + 1em, 5.15em);
+    text-align: center;
+    margin: -5px auto 0;
+  }
+  div {
+    max-width: 160px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+#favorites-page h1 {
+    font-family: 'CatCafe', 'Franklin Gothic Medium', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(2.5em, 5.5vw + 1em, 5.15em);
+    text-align: center;
+    margin: auto;
+}
+.results-options {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px 15px;
+  margin: 0 auto;
+  max-width: 1220px;
+  z-index: 100;
+  background-color: #fAf4e8;
+}
+.select-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.sort-by {
+  padding: 10px 45px 10px 15px;
+  border-radius: 65px;
+  font-family: inherit;
+  outline: none;
+  appearance: none;
+  background-color: #FDFAF4;
+  color: inherit;
+  border: 0.75px solid var(--accent-color);
+  
+  option {
+    padding: 10px;
+    background-color: var(--highlight-color);
+    color: inherit;
+  }
+  &::part(listbox) {
+    padding: 10px;
+  }
+}
+.select-container div {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  display: block;
+  height: 100%;
+  width: 20px;
+  border-radius: 65px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+
+  img {
+    width: 20px;
+  }
+}
+
+/* Gallery */
+.gallery-container {
+  padding: 15px 30px 0;
+  margin: 0 auto 60px;
+  max-width: 1420px;
+}
+.loading-container {
+  /* position: relative; */
+  margin-top: 30px !important;
+  font-size: 1.75em;
+  font-family: 'CatCafe', 'Franklin Gothic Medium', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: 5px;
+}
+.error-container {
+  text-align: center;
+  width: 75%;
+
+  h3 {
+    padding-top: 15px;
+    margin-bottom: 10px;
+  }
+  p {
+    margin-top: 10px;
+  }
+}
+
+/* About Page */
+#about-page {
+  padding: 30px 30px 60px;
+  margin: auto;
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+
+  p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.25em;
+    line-height: 1.35;
+  }
+  .first {
+    flex-direction: column;
+  }
+  img {
+    width: 100%;
+  }
+}
+.hero-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.about-section {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  width: 75%;
+  margin: auto;
+
+  h2 {
+    font-family: 'CatCafe', 'Franklin Gothic Medium', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(2.25em, 3vw + 1em, 3.5em);
+  }
+  div {
+    display: flex;
+    justify-content: center;
+  }
+}
+.about-title {
+  font-family: 'CatCafe', 'Franklin Gothic Medium', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: clamp(3.5em, 5.5vw + 1em, 5.5em);
+}
+
+.about-item {
+  flex-direction: column;
+  
+  p span {
+    padding: 5px 10px;
+    border-radius: 65px;
+    background-color: var(--accent-color);
+
+    img {
+      width: 1em !important;
+    }
+  }
+}
+
+
+@media (min-width: 510px) {
+  /* Landing Page */
+  .results-options {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 500px) {
+  /* Landing Page */
+  #homepage {
+    height: 225px;
+
+    div {
+      max-width: 220px;
+    }
+  }
+
+  /* Gallery */
+  .gallery-container {
+    padding: 15px 30px 0;
+    margin: 0 auto 60px;
+    max-width: 1420px;
+  }
+  .about-section {
+    flex-direction: row !important;
+  }
+}
