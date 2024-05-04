@@ -12,14 +12,13 @@ import toast, { Toaster } from 'react-hot-toast';
 const initFaves = {
   faves: [],
 };
-const getInitialState = () => {
-  const faves = localStorage.getItem("faves");
-  return faves ? JSON.parse(faves) : initFaves;
-};
+// const getInitialState = () => {
+//   const faves = localStorage.getItem("faves");
+//   return faves ? JSON.parse(faves) : initFaves;
+// };
 
 function App() {
-  const [faves, setFaves] = useState<petType[]>(getInitialState);
-  // const [faves, setFaves] = useState<petType[]>([]);
+  const [faves, setFaves] = useState<petType[]>([]);
 
   const [list, setList] = useState<petType[]>([]);
 
@@ -48,12 +47,10 @@ function App() {
     if(isCheckAll) {
         setIsCheckAll(false);
     }
-    console.log(isCheck);
   };
 
   //Download
   const handleDownload = (image: string, filename: string) => {  //fetches the image and converts it into a blob url in order to download it
-    console.log(filename, "downloaded")
     fetch(image)
       .then(response => {
           return response.blob();

@@ -15,9 +15,8 @@ export const StyledCard = styled.div`
         position: relative;
         max-height: 100%;
         max-width: 100%;
-        min-height: 55px;
+        /* min-height: 55px; */
         width: 100%;
-        height: 0;
         box-sizing:border-box;
         background-color: #917C78;
         border-radius: 15px;
